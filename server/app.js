@@ -1,10 +1,15 @@
 const net = require('net');
 const express = require('express');
+const expressWs = require('express-ws');
 const request = require('request');
+const path = require('path');
 const app = express();
+const WebSocket = require('ws');
 const client = net.Socket();
 
-client.connect(8000, "127.0.0.1", function() {
+expressWs(app);
+
+client.connect(8001, "127.0.0.1", function() {
     console.log('connect server');
 });
 
@@ -24,6 +29,18 @@ app.get('/overcook/reflection/send_songs', function() {
     const arr = ['0A', '1C', '30', '4Z'];
     const bufArr = arr.map(str => Buffer.from(str));
     client.write(Buffer.concat(bufArr));
+});
+
+app.get('/overcook/reflection/test-wss', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'index.html'))
+});
+
+app.ws('/overcook/reflection/wss', function(ws, req) {
+    ws.on('message', function incoming(message) {
+        console.log('received: %s', message);
+    });
+
+    ws.send('something');
 });
 
 const PORT = 5000;
