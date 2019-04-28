@@ -4,7 +4,6 @@ const expressWs = require('express-ws');
 const request = require('request');
 const path = require('path');
 const app = express();
-const WebSocket = require('ws');
 const client = net.Socket();
 
 expressWs(app);
@@ -35,7 +34,7 @@ app.get('/overcook/reflection/test-wss', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'index.html'))
 });
 
-app.ws('/overcook/reflection/wss', function(ws, req) {
+app.ws('/overcook-wss/reflection', function(ws, req) {
     ws.on('message', function incoming(message) {
         console.log('received: %s', message);
     });
