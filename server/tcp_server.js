@@ -1,33 +1,46 @@
 const net = require('net');
 
+let cacheBuf;
+let client; // 
+
 const server = net.createServer((socket) => {
-    console.log('someone connected!');
-    // setInterval(function() {
-    //     const buf1 = Buffer.from('0A');
-    //     const buf2 = Buffer.from('1C');
-    //     const aa = Buffer.from([0xAA]);
-    //     const bb = Buffer.from([0xBB]);
-    //     const data = Buffer.concat([aa, buf1, buf2, bb]);
-    //     socket.write(data);
-    // }, 1000);
+    console.log('cacheBuf', cacheBuf);
+    client = socket;
+
+    if (cacheBuf) {
+        client && client.write(cacheBuf);
+        cacheBuf = null;
+    }
 
     socket.on('data', function(buf) {
         console.log('data from client', buf.toString(), buf.toString('hex'));
-        const signal = buf.toString('hex');
-        if (signal == '4f4b0d0a') {
-            console.log('client receive success!');
-        } else {
-            const head = Buffer.from([0xAA]);
-            const tail = Buffer.from([0xBB]);
-            socket.write(Buffer.concat([head, buf, tail]));
-        }
+        const head = Buffer.from([0xAA]);
+        const tail = Buffer.from([0xBB]);
+        const final = Buffer.concat([head, buf, tail]);
+        cacheBuf = final;
+        // socket.write(final);
+        client && client.write(final);
+    });
+
+    socket.on('connect', function() {
+        console.log('connected')
+    });
+
+    socket.on('close', function() {
+        console.log('close');
+        cacheBuf = null;
+        client = null;
     });
 
     socket.on('error', function(err) {
-        console.log(err);
+        console.log('error', err);
     });
 });
 
-server.listen(8001, () => {
+server.on('connection', function(c) {
+    console.log('connection event');
+});
+
+server.listen(8000, () => {
     console.log('create server on port 8000')
 });

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TEST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            padding-top: 5vh;
+            background-color: #F9B84F ;
+            color: #fff;
+        }
+
+        .song-list {
+            width: 80vw;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 20px;
+        }
+
+        .song-list>p {
+            line-height: 1.5;
+        }
+
+        .submit {
+            display: block;
+            width: 80px;
+            height: 40px;
+            border: 1px solid #fff;
+            margin: 100px auto 20px;
+            border-radius: 10px;
+            background-color: rgb(235, 225, 135);
+        }
+
+        .status {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="song-list">
+        <p class="title">歌单</p>
+        <p>01 菅野祐悟 - 炭水化物要員(01)</p>
+        <p>02 梁晓雪 - 好时光(0J)</p>
+        <p>03 张悬 - 喜欢(11)</p>
+        <p>04 Coldplay - Yellow(1W)</p>
+        <p>05 Cults - You Know What I Mean(20)</p>
+        <p>06 X JAPAN - ENDLESS RAIN(5H)</p>
+    </div>
+    <button class="submit" id="submit">播放</button>
+    <p class="status"></p>
+    <script>
+        const subDOM = document.getElementById('submit');
+        const statusDOM = document.querySelector('.status');
+        const data = ['01', '0J', '11', '1W', '20', '5H'];
+
+        subDOM.addEventListener('click', function() {
+            statusDOM.innerHTML = '发送中...';
+            fetch('/overcook/reflection/send_songs', {
+                body: JSON.stringify({data}),
+                headers: {
+                    'content-type': 'application/json'
+                },
+                method: 'POST'
+            })
+                .then(res => res.json())
+                .then(d => {
+                    if (d && d.code == 200) {
+                        statusDOM.innerHTML = '已发送';
+
+                        setTimeout(function() {
+                            statusDOM.innerHTML = '';
+                        }, 2000)
+                    } else {
+                        statusDOM.innerHTML = '出错了';
+                    }
+                })
+                .catch(e => {
+                    statusDOM.innerHTML = '出错了';
+                });
+        });
+    </script>
+</body>
+</html>
