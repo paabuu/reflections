@@ -46,5 +46,13 @@ Page({
         })
       }
     });
+  },
+
+  changeSelectedType(e) {
+    const { key } = e.currentTarget.dataset;
+
+    this.setData({
+      selectedKey: key
+    });
   }
 })

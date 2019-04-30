@@ -12,16 +12,23 @@
     width: 20vw;
     height: 100vh;
     font-size: 30rpx;
-    padding-top: 20rpx;
-    box-sizing: border-box;
 }
 
 .type-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
+    height: 84rpx;
     text-align: center;
     line-height: 1.5;
-    margin-bottom: 38rpx;
     color: #6E6D6D;
+}
+
+.type-item_selected {
+    background-color: #FE7829;
+    color: #fff;
 }
 
 .food-list {
@@ -32,7 +39,6 @@
 }
 
 .food-list-item {
-    height: 250rpx;
     display: flex;
     justify-content: space-between;
     background-color: #fff;
@@ -41,7 +47,8 @@
 
 .food-image {
     width: 250rpx;
-    height: 250rpx;
+    min-height: 250rpx;
+    height: 100%;
 }
 
 .food-info {
