@@ -1,13 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    <view><image src="/assets/p1/icon@3x.png" alt="" class="p1-icon"></image></view>
+    <view><image mode="aspectFit" src="/assets/p1/title@3x.png" alt="" class="p1-title"></image></view>
+    <view class="p1-bg p1-bg1"></view>
+    <view class="p1-bg p1-bg2"></view>
+    <view class="p1-bg p1-bg3"></view>
+    <view class="p1-bg p1-bg4"></view>
+    <view class="p1-bg p1-bg5"></view>
 </view>

@@ -10,6 +10,7 @@ const client = net.Socket();
 
 expressWs(app);
 app.use(bodyParser.json());
+app.use('/overcook/reflection/assets', express.static('assets'));
 
 client.connect(8000, "127.0.0.1", function() {
     console.log('前端连接到服务器');

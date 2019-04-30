@@ -1,4 +1,28 @@
 //app.js
+const MENU = require('/assets/data/menu.js');
+const TYPES = [
+  { name: '主 食', key: 'zhushi' },
+  { name: '热 炒', key: 'rechao' },
+  { name: '粥 类', key: 'zhoulei' },
+  { name: '汤 类', key: 'tanglei' },
+  { name: '汉 堡', key: 'hanbao' },
+  { name: '比 萨', key: 'bisa' },
+  { name: '意 面', key: 'yimian' },
+  { name: '小 吃', key: 'xiaochi' },
+  { name: '小 食', key: 'xiaoshi' },
+  { name: '甜 品', key: 'tianpin' },
+  { name: '饮 品', key: 'yinpin' },
+  { name: '酒 类', key: 'jiulei' },
+];
+
+let menu = {};
+TYPES.forEach(t => {
+  menu[t.key] = MENU[t.key].map(f => ({
+    ...f, 
+    count: 0
+  }))
+});
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -34,6 +58,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    menu,
+    types: TYPES
   }
 })

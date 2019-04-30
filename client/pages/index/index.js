@@ -11,7 +11,10 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-    this.fetchPopularRecipes();
+    // this.fetchPopularRecipes();
+    wx.redirectTo({
+      url: '/pages/menu/menu'
+    });
   },
   fetchPopularRecipes: function() {
     const url = `https://greatwhole90.com/overcook/recipe/popular`;

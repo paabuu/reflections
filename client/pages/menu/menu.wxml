@@ -1,0 +1,59 @@
+<!--pages/menu/menu.wxml-->
+<view class="menu-container">
+    <scroll-view
+        class="types"
+        scroll-y
+    >
+        <view 
+            wx:for="{{types}}" 
+            wx:for-index="idx" 
+            wx:for-item="type" 
+            wx:key="type.name"
+            class="type-item"
+        >
+            {{type.name}}
+        </view>  
+    </scroll-view>
+    <view class="food-list">
+        <view 
+            wx:for="{{menu[selectedKey]}}" 
+            wx:for-index="idx" 
+            wx:for-item="food" 
+            wx:key="food.name"
+            class="food-list-item"
+        >
+            <view><image mode="scaleToFill" class="food-image" src="https://greatwhole90.com/overcook/reflection/assets/{{selectedKey}}/im_{{ idx < 9 ? '0' + (idx + 1) : (idx + 1) }}@3x.png"></image></view>
+            <view class="food-info">
+                <text class="food-name">{{food.name}}</text>
+                <text class="food-main-materials">主要原料：{{food.mainMaterials}}</text>
+                <text class="food-price">¥{{food.price}}</text>
+                <view>
+                    <view class="food-operation" wx:if="{{food.count > 0}}">
+                        <image 
+                            mode="aspectFit" src="/assets/p2/ic_+@3x.png"
+                            data-index="{{idx}}" 
+                            data-count="{{food.count}}"
+                            bindtap="addToShoppingCart"
+                        ></image>
+                        <image 
+                            mode="aspectFit" src="/assets/p2/ic_-@3x.png"
+                            data-index="{{idx}}" 
+                            data-count="{{food.count}}"
+                            bindtap="removeFromShoppingCart"
+                        ></image>
+                        <view class="food-operation-button bg-red"><text>{{food.count}}</text></view>
+                    </view>
+                    <view 
+                        wx:else 
+                        class="food-operation-button bg-red" 
+                        data-index="{{idx}}" 
+                        data-count="{{food.count}}"
+                        bindtap="addToShoppingCart"
+                    >
+                        <text>+</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,21 +1,70 @@
 /**index.wxss**/
-.userinfo {
+.container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+.p1-title {
+  width: 503rpx;
+  height: 63rpx;
+  margin-top: 58rpx;
+}
+
+.p1-icon {
+  width: 86rpx;
+  height: 268rpx;
+}
+
+.p1-bg {
+  position: absolute;
+  z-index: -1;
+}
+
+.p1-bg1 {
+  width: 750rpx;
+  height: 700rpx;
+  top: 0;
+  background-image: linear-gradient(195deg, #FFFFFF 0%, #FADFAD 100%);
+}
+
+.p1-bg2 {
+  width: 300vw;
+  height: 300vw;
+  top: 20vh;
+  left: -50vw;
+  background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
   border-radius: 50%;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.p1-bg3 {
+  width: 300vw;
+  height: 300vw;
+  top: 35vh;
+  right: -50vw;
+  background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+  border-radius: 50%;
 }
 
-.usermotto {
-  margin-top: 200px;
+.p1-bg4 {
+  width: 300vw;
+  height: 300vw;
+  top: 45vh;
+  left: -50vw;
+  background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+  border-radius: 50%;
+}
+
+.p1-bg5 {
+  width: 300vw;
+  height: 300vw;
+  top: 60vh;
+  right: -50vw;
+  background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+  border-radius: 50%;
 }
