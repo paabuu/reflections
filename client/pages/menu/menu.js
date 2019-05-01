@@ -10,7 +10,6 @@ Page({
     menu: globalData.menu,
     types: globalData.types,
     selectedKey: globalData.types[0].key,
-    count: globalData.count
   },
 
   /**
@@ -18,6 +17,12 @@ Page({
    */
   onLoad: function (options) {
     console.log(this.data)
+  },
+
+  onShow: function() {
+    this.setData({
+      menu: globalData.menu
+    });
   },
 
   addToShoppingCart: function(e) {
@@ -32,20 +37,23 @@ Page({
 
   updateShoppingCart(index, count) {
     const { menu, selectedKey } = this.data;
-    this.setData({
-      menu: {
-        ...menu,
-        [selectedKey]: menu[selectedKey].map((f, i) => {
-          if (index === i) {
-            return {
-              ...f,
-              count
-            }
+    const newMenu = {
+      ...menu,
+      [selectedKey]: menu[selectedKey].map((f, i) => {
+        if (index === i) {
+          return {
+            ...f,
+            count
           }
-          return f;
-        })
-      }
+        }
+        return f;
+      })
+    };
+    this.setData({
+      menu: newMenu
     });
+
+    globalData.menu = newMenu;
   },
 
   changeSelectedType(e) {
@@ -53,6 +61,19 @@ Page({
 
     this.setData({
       selectedKey: key
+    });
+  },
+
+  viewFoodDetail(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${id}`
+    });
+  },
+
+  navigate() {
+    wx.navigateTo({
+      url: "/pages/shopping_cart/shopping_cart"
     });
   }
 })

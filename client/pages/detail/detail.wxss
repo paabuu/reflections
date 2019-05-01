@@ -1,0 +1,105 @@
+/* pages/detail/deatil.wxss */
+.detail-container {
+    width: 100vw;
+    height: 90vh;
+}
+.detail-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 45vh;
+    background: #EEB357;
+}
+
+.detail-info {
+    position: relative;
+    width: 572rpx;
+    margin: 0 auto;
+    padding-bottom: 50rpx;
+}
+
+.shadow {
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    margin: 0 auto;
+    background-color: #D8D8D8;
+    opacity: 0.5;
+}
+
+.shadow1 {
+    width: 504rpx;
+    height: 24rpx;
+    top: -24rpx;
+}
+
+.shadow2 {
+    width: 434rpx;
+    height: 38rpx;
+    top: -38rpx;
+}
+
+
+.detail-image {
+    margin-top: 100rpx;
+}
+
+.detail-image image {
+    width: 572rpx;
+    height: 572rpx;
+}
+
+.detail-food-name {
+    padding: 46rpx 0 28rpx;
+    font-weight: bold;
+    font-size: 44rpx;
+    line-height: 1;
+    border-bottom: 1px solid #DD8B17; 
+}
+
+.food-desc,
+.food-materials {
+    font-family: PingFangSC-Light;
+    font-size: 28rpx;
+    line-height: 1.5;
+    margin-top: 24rpx;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 44rpx 0 50rpx;
+    font-size: 28rpx;
+}
+
+.price-info .price {
+    font-weight: bold;
+    font-size: 40rpx;
+}
+
+.spec-list {
+    display: flex;
+    justify-content: start;
+    margin-top: 30rpx;
+    flex-wrap: wrap;
+}
+
+.spec-size {
+    background: #F8F8F8;
+    border: 2px solid #CDCDCD;
+    border-radius: 35rpx;
+    padding: 0rpx 20rpx;
+    font-size: 28rpx;
+    margin-right: 50rpx;
+    margin-bottom: 10rpx;
+}
+
+.spec-size_selected {
+    background: #FFE6BF;
+    border: 2px solid #DD8B17;
+    border-radius: 14px;
+}

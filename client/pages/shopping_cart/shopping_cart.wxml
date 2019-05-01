@@ -1,0 +1,45 @@
+<!--pages/shopping_cart/shopping_cart.wxml-->
+<view class="container">
+<view class="ordered-list">
+    <view
+        wx:for="{{list}}"
+        wx:for-item="food"
+        wx:key="{{food.id}}"
+        class="ordered-list-item"
+    >
+        <view class="food-image">
+            <image src="{{food.imageUrl}}"></image>
+        </view>
+        <view class="food-info">
+            <view class="food-info-name"><text>{{food.name}}</text></view>
+            <view class="food-info-bottom">
+                <view class="food-info-price flex-center"><text>¥{{food.price}}</text></view>
+                <view class="food-operation" wx:if="{{food.count > 0}}">
+                    <image 
+                        mode="aspectFit" src="/assets/p2/ic_+@3x.png"
+                        data-id="{{food.id}}" 
+                        data-price="{{food.price}}"
+                        data-flag="{{1}}"
+                        catchtap="update"
+                    ></image>
+                    <image 
+                        mode="aspectFit" src="/assets/p2/ic_-@3x.png"
+                         data-id="{{food.id}}" 
+                        data-price="{{food.price}}"
+                        data-flag="{{-1}}"
+                        catchtap="update"
+                    ></image>
+                    <view class="food-operation-button bg-red"><text>{{food.count}}</text></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="summary">
+    <text>共{{count}}件， 小计：</text>
+    <text>¥{{sum}}</text>
+</view>
+<view class="xiadan flex-center" bindtap="getOrder">
+    <text>{{ count > 0 ? '下单' : '空空如也' }}</text>
+</view>
+</view>

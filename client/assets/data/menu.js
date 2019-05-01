@@ -328,7 +328,8 @@ module.exports = {
                 { size: '小', price: 8 },
                 { size: '中', price: 11.5 },
                 { size: '大', price: 13.5 },
-            ]
+            ],
+            price: 11.5
         },
         {
             name: "炸鸡翅", 

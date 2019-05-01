@@ -33,9 +33,12 @@
 
 .food-list {
     width: 80vw;
+    padding-bottom: 10vh;
     margin-left: 20vw;
     box-sizing: border-box;
     background-color: #efefef;
+    min-height: 90vh;
+    box-sizing: border-box;
 }
 
 .food-list-item {
@@ -103,4 +106,3 @@
 .bg-trans {
     color: #FF5F00;
 }
-

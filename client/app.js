@@ -17,9 +17,11 @@ const TYPES = [
 
 let menu = {};
 TYPES.forEach(t => {
-  menu[t.key] = MENU[t.key].map(f => ({
+  menu[t.key] = MENU[t.key].map((f, index) => ({
     ...f, 
-    count: 0
+    count: 0,
+    id: `${t.key}_${index}`,
+    imageUrl: `https://greatwhole90.com/overcook/reflection/assets/${t.key}/im_${index < 9 ? `0${index + 1}` : index + 1}@3x.png`
   }))
 });
 
@@ -59,6 +61,7 @@ App({
   },
   globalData: {
     menu,
-    types: TYPES
+    types: TYPES,
+    orders: []
   }
 })

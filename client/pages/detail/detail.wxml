@@ -1,0 +1,41 @@
+<!--pages/detail/deatil.wxml-->
+<scroll-view
+    class="detail-container" 
+    wx:if="{{food}}"
+    scroll-y
+>
+    <view class="detail-bg"></view>
+    <view 
+        class="detail-info"
+    >
+        <view class="detail-image">
+            <view class="shadow shadow1"></view>
+            <view class="shadow shadow2"></view>
+            <image src="{{food.imageUrl}}"></image>
+        </view>
+        <view class="detail-food-name"><text>{{food.name}}</text></view>
+        <view class="price-info">
+            <view class="specification" wx:if="{{food.specification}}">
+                <view><text>规格</text></view>
+                <view class="spec-list">
+                    <view
+                        wx:for="{{food.specification}}"
+                        wx:for-item="sp"
+                        wx:for-index="index"
+                        wx:key="index"
+                        id="{{index}}"
+                        class="spec-size {{ index === selectedSizeIndex ? 'spec-size_selected' : '' }}"
+                        bindtap="changeSize"
+                    >{{sp.size}}</view>
+                </view>
+            </view>
+            <view wx:else></view>
+            <view class="price">¥{{food.specification ? food.specification[selectedSizeIndex].price : food.price}}</view>
+        </view>
+        <view class="food-desc" wx-if="{{food.desc}}">{{food.desc}}</view>
+        <view class="food-materials" wx:if="{{food.materials}}">原料：{{food.materials}}</view>
+    </view>
+</scroll-view>
+<view class="shopping-cart">
+    <text>添加至购物车</text>
+</view>

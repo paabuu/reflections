@@ -8,3 +8,23 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }  */
+
+.shopping-cart {
+  position: fixed; 
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+
+  background-color: #F7C0A8;
+  color: #fff;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

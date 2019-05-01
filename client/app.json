@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/menu/menu"
+    "pages/detail/detail",
+    "pages/menu/menu",
+    "pages/shopping_cart/shopping_cart",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",

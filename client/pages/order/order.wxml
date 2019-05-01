@@ -1,0 +1,28 @@
+<!--pages/order/order.wxml-->
+<view class="order-container">
+    <view class="order">
+        <view class="order-header">
+            <view class="corner corner1"></view>
+            <view class="corner corner2"></view>
+            <view class="corner corner3"></view>
+            <image class="title1" mode="aspectFit" src="/assets/p5/header1.png"></image>
+            <image class="title2" mode="aspectFit" src="/assets/p5/header2.png"></image>
+        </view>
+        <view class="order-body">
+            <view 
+                class="order-item"
+                wx:for="{{names}}"
+                wx:for-item="name"
+                wx:key="name"
+            >
+                <text>{{name}}</text>
+            </view>
+        </view>
+        <view class="order-footer">
+            <view class="corner corner4"></view>
+            <view class="corner corner5"></view>
+            <view class="date"><text>2019-05-01 22:00:22</text></view>
+            <view class="ok"><text>OK</text></view>
+        </view>
+    </view>
+</view>
