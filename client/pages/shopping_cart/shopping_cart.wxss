@@ -4,6 +4,7 @@
     background-color: #efefef;
     padding-top: 4rpx;
     overflow: hidden;
+    height: 85vh;
 }
 
 .ordered-list-item {
@@ -24,19 +25,23 @@
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    padding: 0 20rpx 0 44rpx;
+    padding: 15rpx 20rpx 15rpx 44rpx;
     box-sizing: border-box;
     background-color: #fff;
 }
 
 .food-info-name {
     font-weight: bold;
-    font-size: 36rpx;
+    font-size: 34rpx;
     margin-bottom: 10rpx;
+    letter-spacing: 5rpx;
 }
 
 .food-info-price {
     color: #F04A4A;
+    font-size: 28rpx;
+    font-weight: bold;
+    letter-spacing: 3rpx;
 }
 
 .food-info-bottom {
@@ -59,6 +64,11 @@
     float: right;
 }
 
+.text-verticle-center {
+    line-height: 54rpx;
+    font-size: 30rpx;
+}
+
 .food-operation image {
     width: 30rpx;
     height: 30rpx;
@@ -79,12 +89,20 @@
     position: fixed;
     bottom: 10vh;
     width: 100vw;
+    height: 6vh;
     text-align: right;
     font-weight: bold;
+    font-size: 28rpx;
     line-height: 2.5;
+    letter-spacing: 5rpx;
     padding-right: 22rpx;
     box-sizing: border-box;
     border-top: 4rpx solid #efefef;
+    background-color: #fff;
+}
+
+.summary-num {
+    color: #F04A4A;
 }
 
 .xiadan {

@@ -56,15 +56,16 @@
 .detail-food-name {
     padding: 46rpx 0 28rpx;
     font-weight: bold;
-    font-size: 44rpx;
+    font-size: 40rpx;
     line-height: 1;
     border-bottom: 1px solid #DD8B17; 
+    letter-spacing: 5rpx;
 }
 
 .food-desc,
 .food-materials {
     font-family: PingFangSC-Light;
-    font-size: 28rpx;
+    font-size: 24rpx;
     line-height: 1.5;
     margin-top: 24rpx;
 }
@@ -72,13 +73,13 @@
 .price-info {
     display: flex;
     justify-content: space-between;
-    margin: 44rpx 0 50rpx;
-    font-size: 28rpx;
+    margin: 44rpx 0 30rpx;
+    font-size: 24rpx;
 }
 
 .price-info .price {
     font-weight: bold;
-    font-size: 40rpx;
+    font-size: 34rpx;
 }
 
 .spec-list {
@@ -90,16 +91,16 @@
 
 .spec-size {
     background: #F8F8F8;
-    border: 2px solid #CDCDCD;
+    border: 2rpx solid #CDCDCD;
     border-radius: 35rpx;
     padding: 0rpx 20rpx;
-    font-size: 28rpx;
+    font-size: 20rpx;
     margin-right: 50rpx;
     margin-bottom: 10rpx;
 }
 
 .spec-size_selected {
     background: #FFE6BF;
-    border: 2px solid #DD8B17;
+    border: 2rpx solid #DD8B17;
     border-radius: 14px;
 }

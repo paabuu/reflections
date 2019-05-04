@@ -47,7 +47,7 @@
                             data-count="{{food.count}}"
                             catchtap="removeFromShoppingCart"
                         ></image>
-                        <view class="food-operation-button bg-red"><text>{{food.count}}</text></view>
+                        <view class="food-operation-button bg-red text-verticle-center"><text>{{food.count}}</text></view>
                     </view>
                     <view 
                         wx:else 

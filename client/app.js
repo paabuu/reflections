@@ -57,11 +57,13 @@ App({
           })
         }
       }
-    })
+    });
+    console.log('lunch')
   },
   globalData: {
     menu,
     types: TYPES,
-    orders: []
+    orders: [],
+    songs: []
   }
 })

@@ -1,6 +1,6 @@
 <!--pages/order/order.wxml-->
 <view class="order-container">
-    <view class="order">
+    <view class="order" wx:if="{{!loading}}">
         <view class="order-header">
             <view class="corner corner1"></view>
             <view class="corner corner2"></view>
@@ -21,8 +21,12 @@
         <view class="order-footer">
             <view class="corner corner4"></view>
             <view class="corner corner5"></view>
-            <view class="date"><text>2019-05-01 22:00:22</text></view>
-            <view class="ok"><text>OK</text></view>
+            <view class="date"><text>{{time}}</text></view>
+            <view class="ok"><text bindtap="showLoading">OK</text></view>
+            <image mode="aspectFill" src="/assets/p5/footer.png"></image>
         </view>
+    </view>
+    <view wx:else class="loading">
+        <image src="/assets/p5/loading@3x.png"></image>
     </view>
 </view>

@@ -1,0 +1,5 @@
+<!--pages/canvas/canvas.wxml-->
+<canvas 
+    canvas-id="songs"
+    style="width: {{width}}px; height: {{height}}px"
+></canvas>

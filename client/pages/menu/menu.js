@@ -16,7 +16,6 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(this.data)
   },
 
   onShow: function() {

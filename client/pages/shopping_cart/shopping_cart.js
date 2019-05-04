@@ -62,7 +62,6 @@ Page({
       const index = d.id.split('_')[1];
       menu[d.type][index].count = d.count;
     });
-    console.log(menu)
     globalData.menu = menu;
   },
 

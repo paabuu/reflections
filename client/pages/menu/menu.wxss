@@ -9,9 +9,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 20vw;
+    width: 16vw;
     height: 100vh;
-    font-size: 30rpx;
+    font-size: 26rpx;
+    background-color: #FFFDFB;
 }
 
 .type-item {
@@ -32,9 +33,9 @@
 }
 
 .food-list {
-    width: 80vw;
+    width: 84vw;
     padding-bottom: 10vh;
-    margin-left: 20vw;
+    margin-left: 16vw;
     box-sizing: border-box;
     background-color: #efefef;
     min-height: 90vh;
@@ -57,23 +58,25 @@
 .food-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 10rpx 22rpx;
+    justify-content: space-around;
+    padding: 10rpx 32rpx 10rpx 22rpx;
     box-sizing: border-box;
     text-align: right;
 }
 
 .food-name {
     font-weight: bold;
-    font-size: 40rpx;
+    font-size: 34rpx;
+    letter-spacing: 5rpx;
 }
 
 .food-main-materials {
-    font-size: 26rpx;
+    font-size: 24rpx;
+    font-weight: light;
 }
 
 .food-price {
-    font-size: 34rpx;
+    font-size: 30rpx;
     color: #F04A4A;
     font-weight: bold;
 }
@@ -87,8 +90,14 @@
 .food-operation-button {
     width: 68rpx;
     height: 50rpx;
+    line-height: 50rpx;
     text-align: center;
     float: right;
+}
+
+.text-verticle-center {
+    line-height: 54rpx;
+    font-size: 30rpx;
 }
 
 .food-operation image {

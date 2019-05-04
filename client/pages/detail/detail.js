@@ -31,5 +31,13 @@ Page({
     this.setData({
       selectedSizeIndex: +e.currentTarget.id
     })
+  },
+
+  addToShoppingCart() {
+    const { type, index } = this.data;
+    const { menu } = globalData;
+
+    menu[type][+index - 1].count++;
+    globalData.menu = menu;
   }
 })

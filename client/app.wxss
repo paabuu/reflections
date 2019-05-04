@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }  */
 
+/* @font-face {
+  font-family: 'FZBYSK';
+  src: url(https://greatwhole90.com/overcook/reflection/assets/fonts/FZBYSK.TTF)
+} */
+
 .shopping-cart {
   position: fixed; 
   left: 0;

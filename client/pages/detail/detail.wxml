@@ -36,6 +36,6 @@
         <view class="food-materials" wx:if="{{food.materials}}">原料：{{food.materials}}</view>
     </view>
 </scroll-view>
-<view class="shopping-cart">
+<view class="shopping-cart" bindtap="addToShoppingCart">
     <text>添加至购物车</text>
 </view>
