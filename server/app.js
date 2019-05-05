@@ -6,7 +6,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 const client = net.Socket();
-
+const db = require('./db');
 
 expressWs(app);
 app.use(bodyParser.json());
@@ -18,9 +18,6 @@ client.connect(8000, "127.0.0.1", function() {
 
 client.on('data', function(data) {
     console.log('前端收到消息', data.toString(), data.toString('hex'));
-    // setTimeout(function() {
-    //     client.write(Buffer.from([0x4f, 0x4b, 0x0d, 0x0a]));
-    // }, 3000);
 });
 
 app.get(/\/overcook\/(?!reflection\/.*)/, function(req, res) {
@@ -28,6 +25,20 @@ app.get(/\/overcook\/(?!reflection\/.*)/, function(req, res) {
     req.pipe(request(`http://localhost:5001${req.url}`)).pipe(res);
 });
 
+// 访问记录
+app.post('/overcook/reflection/record', (req, res) => {
+    const { data } = req.body;
+    db.save(data, () => {
+        console.log(`> ${data.time} 新增一条访问记录`);
+        res.json({
+            meta: {
+                code: 200
+            }
+        });
+    });
+});
+
+// 临时测试接口
 app.post('/overcook/reflection/send_songs', function(req, res) {
     const arr = req.body.data;
     const bufArr = arr.map(str => Buffer.from(str));
@@ -38,7 +49,6 @@ app.post('/overcook/reflection/send_songs', function(req, res) {
         code: 200
     });
 });
-
 app.get('/overcook/reflection/test', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'test_tcp.html'))
 });
@@ -47,6 +57,7 @@ app.get('/overcook/reflection/test-wss', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'index.html'))
 });
 
+// websocket
 app.ws('/overcook-wss/reflection', function(ws, req) {
     ws.on('message', function incoming(message) {
         console.log('received: %s', message);

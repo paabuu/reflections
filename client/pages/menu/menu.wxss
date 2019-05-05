@@ -47,11 +47,12 @@
     justify-content: space-between;
     background-color: #fff;
     margin-bottom: 10rpx;
+    min-height: 250rpx;
 }
 
 .food-image {
     width: 250rpx;
-    min-height: 250rpx;
+    height: 250rpx;
     height: 100%;
 }
 
@@ -73,6 +74,7 @@
 .food-main-materials {
     font-size: 24rpx;
     font-weight: light;
+    line-height: 1;
 }
 
 .food-price {

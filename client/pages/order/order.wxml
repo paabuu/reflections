@@ -1,6 +1,11 @@
 <!--pages/order/order.wxml-->
 <view class="order-container">
     <view class="order" wx:if="{{!loading}}">
+        <view class="order-bg order-bg1"></view>
+        <view class="order-bg order-bg2"></view>
+        <view class="order-bg order-bg3"></view>
+        <view class="order-bg order-bg4"></view>
+        <view class="order-bg order-bg5"></view>
         <view class="order-header">
             <view class="corner corner1"></view>
             <view class="corner corner2"></view>

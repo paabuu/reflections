@@ -9,6 +9,8 @@
 }
 
 .songs {
+    position: relative;
+    overflow: hidden;
     width: 532rpx;
     margin: 0 auto;
     background-image: linear-gradient(#FFF6E5, #FADFAD);
@@ -63,6 +65,7 @@
 }
 
 .songs-body {
+    position: relative;
     padding-top: 40rpx;
     min-height: 55vh;
     box-sizing: border-box;
@@ -74,7 +77,7 @@
     line-height: 1.5;
     font-size: 30rpx;
     padding: 0 22rpx 0 60rpx;
-    margin-bottom: 40rpx;
+    margin-top: 40rpx;
     box-sizing: border-box;
 }
 
@@ -105,7 +108,8 @@
 
 .songs-footer .date {
     font-size: 30rpx;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 5rpx;
+    font-family: 'FZBWKSFT', Georgia, 'Times New Roman', Times, serif;
 }
 
 .songs-footer .download {
@@ -113,6 +117,12 @@
     z-index: 10;
     width: 50rpx;
     height: 50rpx;
+}
+
+
+.download-done {
+    width: 46rpx;
+    height: 46rpx;
 }
 
 .songs-footer .footer-bg {
@@ -138,3 +148,51 @@ canvas {
     z-index: -100;
     opacity: 0;
 }
+
+.order-bg {
+    position: absolute;
+    /* z-index: -1; */
+  }
+  
+  .order-bg1 {
+    width: 750rpx;
+    height: 700rpx;
+    top: 0;
+    background-image: linear-gradient(195deg, #FFFFFF 0%, #FADFAD 100%);
+  }
+  
+  .order-bg2 {
+    width: 300vw;
+    height: 300vw;
+    top: 20vh;
+    left: -50vw;
+    background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+    border-radius: 50%;
+  }
+  
+  .order-bg3 {
+    width: 300vw;
+    height: 300vw;
+    top: 35vh;
+    right: -50vw;
+    background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+    border-radius: 50%;
+  }
+  
+  .order-bg4 {
+    width: 300vw;
+    height: 300vw;
+    top: 45vh;
+    left: -50vw;
+    background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+    border-radius: 50%;
+  }
+  
+  .order-bg5 {
+    width: 300vw;
+    height: 300vw;
+    top: 60vh;
+    right: -50vw;
+    background-image: radial-gradient(circle, #f9cd7f, #FFFFFF);
+    border-radius: 50%;
+  }

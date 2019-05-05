@@ -22,6 +22,12 @@ Page({
     });
 
     const temp = [];
+    const recordData = {
+      time: formatTime(new Date()),
+      orders: globalData.orders,
+      songs: []
+    };
+
     const songs = globalData.orders.map((o, i) => {
       let index = Math.floor(Math.random() * o.songs.length);
       const key = o.songs[index];
@@ -33,16 +39,35 @@ Page({
           }
         }
       }
+      recordData.songs.push({
+        [o.songs[index]]: songData[o.songs[index]]
+      });
       return `${ i < 9 ? `0${i + 1}` : i + 1 } ${songData[o.songs[index]].slice(5)}`;
     });
 
     globalData.songs = songs;
 
+    wx.request({
+      url: 'https://greatwhole90.com/overcook/reflection/record',
+      method: 'POST',
+      data: { data: recordData },
+      success: res => {
+        console.log(res);
+      }
+    });
+
     wx.loadFontFace({
       family: 'FZBYSK',
       source: 'url("https://greatwhole90.com/overcook/reflection/assets/fonts/FZBYSK.TTF")',
       success: console.log
-    })
+    });
+    wx.loadFontFace({
+      family: 'FZBWKSFT',
+      source: 'url("https://greatwhole90.com/overcook/reflection/assets/fonts/FZBWKSFT.ttf")',
+      success: console.log
+    });
+
+    console.log(globalData)
   },
 
   showLoading() {

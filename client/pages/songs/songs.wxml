@@ -1,6 +1,11 @@
 <!--pages/songs/songs.wxml-->
 <view class="songs-container">
     <view class="songs" wx:if="{{!loading}}">
+        <view class="order-bg order-bg1"></view>
+        <view class="order-bg order-bg2"></view>
+        <view class="order-bg order-bg3"></view>
+        <view class="order-bg order-bg4"></view>
+        <view class="order-bg order-bg5"></view>
         <view class="songs-header">
             <view class="corner corner1"></view>
             <view class="corner corner2"></view>
@@ -22,7 +27,8 @@
             <view class="corner corner4"></view>
             <view class="corner corner5"></view>
             <view class="date"><text>{{time}}</text></view>
-            <image class="download" src="/assets/p6/download.png" mode="aspectFit" bindtap="save"></image>
+            <image wx:if="{{ !hasDownloaded }}" class="download" src="/assets/p6/download.png" mode="aspectFit" bindtap="save"></image>
+            <image wx:if="{{ hasDownloaded }}" class="download-done" src="/assets/p6/ic_finish@3x.png" mode="aspectFit" bindtap="save"></image>
             <image class="footer-bg" mode="aspectFill" src="/assets/p5/footer.png"></image>
         </view>
     </view>

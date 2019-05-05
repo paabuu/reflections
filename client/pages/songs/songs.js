@@ -11,7 +11,8 @@ Page({
     songs: [],
     width: 375,
     height: 1000,
-    time: formatTime(new Date())
+    time: formatTime(new Date()),
+    hasDownloaded: false
   },
 
   /**
@@ -37,7 +38,12 @@ Page({
       family: 'FZBYSK',
       source: 'url("https://greatwhole90.com/overcook/reflection/assets/fonts/FZBYSK.TTF")',
       success: console.log
-    })
+    });
+    wx.loadFontFace({
+      family: 'FZBWKSFT',
+      source: 'url("https://greatwhole90.com/overcook/reflection/assets/fonts/FZBWKSFT.ttf")',
+      success: console.log
+    });
   },
 
   /**
@@ -121,7 +127,10 @@ Page({
               title: '已保存到相册',
               icon: 'success',
               duration: 2000
-            })
+            });
+            this.setData({
+              hasDownloaded: true
+            });
           }
         });
       }
