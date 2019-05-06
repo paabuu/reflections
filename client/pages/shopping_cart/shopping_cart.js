@@ -44,7 +44,7 @@ Page({
       }
 
       return d;
-    }).filter(d => d.count > 0);
+    });
 
     this.setData({
       list: newList,

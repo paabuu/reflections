@@ -22,11 +22,13 @@ Page({
     this.setData({
       songs: globalData.songs
     });
+
+    const extraHeight = globalData.songs.length > 9 ? 40 * (globalData.songs.length - 9) : 0;
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
           width: res.windowWidth,
-          height: res.windowHeight
+          height: res.windowHeight + extraHeight
         });
       },
       complete: () => {
@@ -54,10 +56,14 @@ Page({
 
   draw() {
     const ctx = wx.createCanvasContext('songs');
-    const { width, height, songs }  = this.data;
+    let { width, height, songs }  = this.data;
     const LEFT_CORNER = { x: 110, y: 70 };
     const WIDTH = 532;
     const PADDING = 66;
+
+    // if (songs.length > 9) {
+    //   height += 40 * (songs.length - 9);
+    // }
 
     let y = LEFT_CORNER.y; // 高度累计
 

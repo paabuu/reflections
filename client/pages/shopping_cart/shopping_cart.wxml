@@ -16,10 +16,10 @@
         wx:key="{{food.id}}"
         class="ordered-list-item"
     >
-        <view class="food-image">
+        <view class="food-image" wx:if="{{food.count > 0}}">
             <image src="{{food.imageUrl}}"></image>
         </view>
-        <view class="food-info">
+        <view class="food-info" wx:if="{{food.count > 0}}">
             <view class="food-info-name"><text>{{food.name}}</text></view>
             <view class="food-info-bottom">
                 <view class="food-info-price flex-center"><text>¥{{food.price}}</text></view>
@@ -33,7 +33,7 @@
                     ></image>
                     <image 
                         mode="aspectFit" src="/assets/p2/ic_-@3x.png"
-                         data-id="{{food.id}}" 
+                        data-id="{{food.id}}" 
                         data-price="{{food.price}}"
                         data-flag="{{-1}}"
                         catchtap="update"
