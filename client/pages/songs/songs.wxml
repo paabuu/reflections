@@ -1,4 +1,6 @@
 <!--pages/songs/songs.wxml-->
+<app-header bgc="transparent" height="10vh"></app-header>
+
 <view class="songs-container">
     <view class="songs" wx:if="{{!loading}}">
         <view class="order-bg order-bg1"></view>

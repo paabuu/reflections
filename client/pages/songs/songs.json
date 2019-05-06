@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "app-header": "/components/header/header"
+  },
   "navigationBarTitleText": "",
-  "navigationBarBackgroundColor": "#F9B84F"
+  "navigationStyle": "custom"
 }

@@ -2,10 +2,11 @@
 
 .order-container {
     width: 100vw;
-    min-height: 100vh;
+    min-height: 90vh;
     background-color: #F9B84F;
     padding-bottom: 5vh;
     box-sizing: border-box;
+    padding-top: 10vh;
 }
 
 .order {
@@ -67,7 +68,7 @@
 .order-body {
     position: relative;
     padding-top: 80rpx;
-    min-height: 55vh;
+    min-height: 45vh;
     box-sizing: border-box;
     font-family: 'FZBYSK', Georgia, 'Times New Roman', Times, serif;
     z-index: 10;
@@ -77,6 +78,7 @@
     text-align: center;
     line-height: 2;
     font-size: 40rpx;
+    letter-spacing: 10rpx;
 }
 
 .order-footer {
@@ -127,10 +129,19 @@
     height: 60rpx;
 }
 
+.loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #F9B84F;
+}
+
 .loading image {
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 50%;
     
     width: 250rpx;
     height: 250rpx;

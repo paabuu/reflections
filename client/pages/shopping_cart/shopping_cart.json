@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "购物车"
+  "usingComponents": {
+    "app-header": "/components/header/header"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom"
 }

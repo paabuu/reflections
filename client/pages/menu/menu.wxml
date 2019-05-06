@@ -1,4 +1,6 @@
 <!--pages/menu/menu.wxml-->
+<app-header show-back-arrow="{{false}}" text="REFLECTIONS" bgc="#EEB357" height="14vh"></app-header>
+
 <view class="menu-container">
     <scroll-view
         class="types"
@@ -18,6 +20,7 @@
     </scroll-view>
     <view 
         class="food-list"
+        scroll-y
     >
         <view 
             wx:for="{{menu[selectedKey]}}" 

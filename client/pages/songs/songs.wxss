@@ -6,6 +6,7 @@
     background-color: #F9B84F;
     padding-bottom: 5vh;
     box-sizing: border-box;
+    padding-top: 10vh;
 }
 
 .songs {
@@ -66,8 +67,8 @@
 
 .songs-body {
     position: relative;
-    padding-top: 40rpx;
-    min-height: 55vh;
+    padding: 40rpx 0;
+    min-height: 45vh;
     box-sizing: border-box;
     font-family: 'FZBYSK', Georgia, 'Times New Roman', Times, serif;
 }
@@ -79,6 +80,7 @@
     padding: 0 22rpx 0 60rpx;
     margin-top: 40rpx;
     box-sizing: border-box;
+    letter-spacing: 5rpx;
 }
 
 .songs-footer {

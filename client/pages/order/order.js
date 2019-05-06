@@ -10,7 +10,8 @@ Page({
   data: {
     names: globalData.orders.map(o => o.name),
     loading: false,
-    time: formatTime(new Date())
+    time: formatTime(new Date()),
+    songCodes: []
   },
 
   /**
@@ -27,6 +28,7 @@ Page({
       orders: globalData.orders,
       songs: []
     };
+    const songCodes = [];
 
     const songs = globalData.orders.map((o, i) => {
       let index = Math.floor(Math.random() * o.songs.length);
@@ -42,9 +44,13 @@ Page({
       recordData.songs.push({
         [o.songs[index]]: songData[o.songs[index]]
       });
+      songCodes.push(o.songs[index]);
       return `${ i < 9 ? `0${i + 1}` : i + 1 } ${songData[o.songs[index]].slice(5)}`;
     });
 
+    this.setData({
+      songCodes
+    });
     globalData.songs = songs;
 
     wx.request({
@@ -79,7 +85,16 @@ Page({
       wx.navigateTo({
         url: '/pages/songs/songs'
       });
-    }, 2000)
+    }, 2000);
+
+    wx.request({
+      url: 'https://greatwhole90.com/overcook/reflection/send_songs',
+      method: 'POST',
+      data: { data: this.data.songCodes },
+      success: function(res) {
+        console.log(res);
+      }
+    });
   },
 
   /**

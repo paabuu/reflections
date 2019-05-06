@@ -34,10 +34,16 @@ Page({
   },
 
   addToShoppingCart() {
-    const { type, index } = this.data;
+    const { type, index, food } = this.data;
     const { menu } = globalData;
 
     menu[type][+index - 1].count++;
     globalData.menu = menu;
+
+    wx.showToast({
+      title: `${food.name}  +1`,
+      icon: 'success',
+      duration: 2000
+    });
   }
 })

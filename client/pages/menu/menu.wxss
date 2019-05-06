@@ -7,10 +7,10 @@
 
 .types {
     position: fixed;
-    top: 0;
+    top: 14vh;
     left: 0;
     width: 16vw;
-    height: 100vh;
+    height: 86vh;
     font-size: 26rpx;
     background-color: #FFFDFB;
 }
@@ -34,6 +34,7 @@
 
 .food-list {
     width: 84vw;
+    margin-top: 14vh;
     padding-bottom: 10vh;
     margin-left: 16vw;
     box-sizing: border-box;

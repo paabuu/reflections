@@ -1,6 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "REFLECTIONS",
-  "navigationBarBackgroundColor": "#EEB357",
-  "navigationBarTextStyle": "white"
+  "usingComponents": {
+    "app-header": "/components/header/header"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom"
 }

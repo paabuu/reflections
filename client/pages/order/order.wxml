@@ -1,4 +1,6 @@
 <!--pages/order/order.wxml-->
+<app-header bgc="transparent" height="10vh"></app-header>
+
 <view class="order-container">
     <view class="order" wx:if="{{!loading}}">
         <view class="order-bg order-bg1"></view>

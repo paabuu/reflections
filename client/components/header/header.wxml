@@ -1,0 +1,12 @@
+<!--components/header/header.wxml-->
+<view class="app-header" style="height: {{height}}; background: {{bgc}}; {{headerStyle}}">
+    <view wx:if="{{showBackArrow}}" class="back-arrow" bindtap="goBack">
+        <image src="/assets/common/left_white.png"></image>
+    </view>
+    <view wx:if="{{text}}" class="app-header-text">
+        <text style="{{textStyle}}">{{text}}</text>
+    </view>
+    <view wx:else class="app-header-slot">
+        <slot></slot>
+    </view>
+</view>

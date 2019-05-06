@@ -38,7 +38,7 @@ app.post('/overcook/reflection/record', (req, res) => {
     });
 });
 
-// 临时测试接口
+// 发送歌单
 app.post('/overcook/reflection/send_songs', function(req, res) {
     const arr = req.body.data;
     const bufArr = arr.map(str => Buffer.from(str));
@@ -49,6 +49,7 @@ app.post('/overcook/reflection/send_songs', function(req, res) {
         code: 200
     });
 });
+// 临时测试页面
 app.get('/overcook/reflection/test', function(req, res) {
     res.sendFile(path.resolve(__dirname, 'test_tcp.html'))
 });
