@@ -1,5 +1,5 @@
 <!--pages/menu/menu.wxml-->
-<app-header show-back-arrow="{{false}}" text="REFLECTIONS" bgc="#EEB357" height="14vh"></app-header>
+<app-header show-back-arrow="{{false}}" text="REFLECTIONS" text-style="letter-spacing: 8rpx;" bgc="#EEB357" height="14vh"></app-header>
 
 <view class="menu-container">
     <scroll-view

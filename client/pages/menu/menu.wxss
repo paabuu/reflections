@@ -73,9 +73,9 @@
 }
 
 .food-main-materials {
-    font-size: 24rpx;
+    font-size: 20rpx;
     font-weight: light;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 .food-price {

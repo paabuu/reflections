@@ -29,7 +29,8 @@ Page({
       songs: []
     };
     const songCodes = [];
-
+    let wineCount = 0;
+    const wines = globalData.menu['jiulei'].map(m => m.id);
     const songs = globalData.orders.map((o, i) => {
       let index = Math.floor(Math.random() * o.songs.length);
       const key = o.songs[index];
@@ -41,6 +42,11 @@ Page({
           }
         }
       }
+      console.log(wines, o.id);
+      if (wines.indexOf(o.id) > -1) {
+        wineCount++;
+      }
+
       recordData.songs.push({
         [o.songs[index]]: songData[o.songs[index]]
       });
@@ -48,10 +54,18 @@ Page({
       return `${ i < 9 ? `0${i + 1}` : i + 1 } ${songData[o.songs[index]].slice(5)}`;
     });
 
+    if (wineCount >= 3) {
+      songCodes.push('5K');
+      recordData.songs.push({
+        '5K': songData['5K']
+      });
+      songs.push(`${songs.length < 9 ? `0${songs.length + 1}`: songs.length + 1 } ${songData['5K'].slice(5)}`);
+    }
+
     this.setData({
-      songCodes
+      songCodes: this.noRepeatArray(songCodes)
     });
-    globalData.songs = songs;
+    globalData.songs = this.noRepeatArray(songs);
 
     wx.request({
       url: 'https://greatwhole90.com/overcook/reflection/record',
@@ -74,6 +88,17 @@ Page({
     });
 
     console.log(globalData)
+  },
+
+  noRepeatArray(arr) {
+    const newArr = [];
+    arr.forEach(i => {
+      if (newArr.indexOf(i) === -1) {
+        newArr.push(i);
+      }
+    });
+
+    return newArr;
   },
 
   showLoading() {

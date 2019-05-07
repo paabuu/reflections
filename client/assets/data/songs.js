@@ -195,5 +195,13 @@ module.exports = {
     "5E": "0194-Warp Technique-Make Animals Happy",
     "5F": "0195-world’s end girlfriend - MEGURI",
     "5G": "0196-X JAPAN - Amethyst",
-    "5H": "0197-X JAPAN - ENDLESS RAIN"
+    "5H": "0197-X JAPAN - ENDLESS RAIN",
+    "5I": "0198-UNKNOWN-(๑˙ー˙๑)",
+    "5J": "0199-林ゆうき - 竹青荘(アオタケ)←ルビ",
+    "5K": "0200-UNKNOWN-未曾开口",
+    "5L": "0201-細野晴臣 - Going To The Sea",
+    "5M": "0202-細野晴臣 - Shoplifters",
+    "5N": "0203-細野晴臣 - Yuri & Shota's Shoplifting",
+    "5O": "0204-Mychael Danna - The Winner Is",
+    "5P": "0205-くるり - 奇迹"
 };

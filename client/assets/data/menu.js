@@ -11,7 +11,7 @@ module.exports = {
         { 
             name: "腊味煲仔饭", 
             price: 35, 
-            songs: ['0C', '1Z', '56'],
+            songs: ['0C', '1Z', '56', '5J'],
             mainMaterials: "广式腊肠", 
             materials: "广式腊肠，大米，油菜，姜，葱，老抽，盐，糖，生抽",
             desc: "色泽金黄，干香脆口，滋味悠长，回味无穷"
@@ -19,7 +19,7 @@ module.exports = {
         { 
             name: "牛肉面", 
             price: 28, 
-            songs: ['12', '3B'],
+            songs: ['12', '3B', '5L'],
             mainMaterials: "牛腩，面条", 
             materials: "牛腩，白萝卜，面条，桂皮，三奈，肉蔻，生姜，沙姜，香叶，花椒，葱，蒜苗",
             desc: "牛肉口感滋润，面条筋道顺滑，四十年品质如一。"
@@ -109,7 +109,7 @@ module.exports = {
         {
             name: "小炒圆白菜", 
             price: 28, 
-            songs: ['0Q', '10'],
+            songs: ['0Q', '10', '5J'],
             mainMaterials: "圆白菜", 
             materials: "圆白菜，生姜，大蒜，干辣椒，葱花，蚝油，盐",
             desc: ""
@@ -125,7 +125,7 @@ module.exports = {
         {
             name: "香菇油白菜", 
             price: 24, 
-            songs: ['0J', '20'],
+            songs: ['0J', '20', '5L'],
             mainMaterials: "香菇，油白菜", 
             materials: "鲜香菇，油白菜，生姜，大蒜，香葱，蚝油，鸡精，盐",
             desc: ""
@@ -177,7 +177,7 @@ module.exports = {
         {
             name: "白萝卜海带肉片汤", 
             price: 18, 
-            songs: ['06', '12'],
+            songs: ['06', '12', '5O'],
             mainMaterials: "白萝卜，海带，里脊肉片", 
             materials: "白萝卜，海带，里脊肉片，姜，蒜，葱，淀粉，鸡蛋清，盐，白胡椒",
             desc: "" 
@@ -315,7 +315,7 @@ module.exports = {
         {
             name: "麻辣香锅", 
             price: 32, 
-            songs: ['13', '26'],
+            songs: ['13', '26', '5I'],
             mainMaterials: "菜地会随季节和采购有所变化", 
             materials: "莲藕，莴笋，土豆，虾，瘦肉，午餐肉，菜花，木耳，芹菜，大葱，蒜，姜，蒜苗，香菜，生抽，糖，料酒，豆瓣酱，干辣椒，花椒，十三香",
             desc: "" 
@@ -339,7 +339,7 @@ module.exports = {
         {
             name: "烧卖", 
             price: 18, 
-            songs: ['0I', '3E', '5F'],
+            songs: ['0I', '3E', '5F', '5O'],
             mainMaterials: "糯米，猪肉", 
             materials: "糯米，春笋，猪肉，黑木耳，香菇，洋葱，胡萝卜，油，蚝油，鲍鱼汁，生抽，老抽，糖，鱼露，料酒，白胡椒",
             desc: "色鲜味美，质地爽滑，爽口不腻" 
@@ -412,7 +412,7 @@ module.exports = {
         {
             name: "炸鱼", 
             price: 22, 
-            songs: ['0P', '2P'],
+            songs: ['0P', '2P', '5M'],
             mainMaterials: "鲷鱼柳，鸡蛋，面粉", 
             materials: "鲷鱼柳，鸡蛋，面粉，姜末，料酒，椒盐",
             desc: "鲷鱼营养丰富，富含蛋白质、钙、钾、硒等营养元素，能够为人体补充丰富的蛋白质及矿物质。" 
@@ -420,7 +420,7 @@ module.exports = {
         {
             name: "无骨鸡块", 
             price: 22, 
-            songs: ['0G', '1C'],
+            songs: ['0G', '1C', '5P'],
             mainMaterials: "黄金鸡块", 
             materials: "黄金鸡块",
             desc: "",
@@ -490,7 +490,7 @@ module.exports = {
         {
             name: "拿铁咖啡", 
             price: 28, 
-            songs: ['0D', '1V', '27', '49'],
+            songs: ['0D', '1V', '27', '49', '5P'],
             mainMaterials: "咖啡豆", 
             materials: "咖啡豆（100%阿拉卡比咖啡），纯牛奶，水",
             desc: ""
@@ -530,7 +530,7 @@ module.exports = {
         {
             name: "橙汁", 
             price: 28, 
-            songs: ['0N', '1G'],
+            songs: ['0N', '1G', '5N'],
             mainMaterials: "新鲜橙子", 
             materials: "新鲜橙子",
             desc: ""
@@ -554,7 +554,7 @@ module.exports = {
         {
             name: "mojito", 
             price: 22, 
-            songs: ['08', '0S', '11', '31'],
+            songs: ['08', '0S', '11', '31', '5K'],
             mainMaterials: "薄荷，苏打水", 
             materials: "薄荷，柠檬汁，苏打水",
             desc: ""
@@ -588,7 +588,7 @@ module.exports = {
         {
             name: "朝日啤酒", 
             price: 12, 
-            songs: ['01', '0E', '0F', '4E', '5H'],
+            songs: ['01', '0E', '0F', '4E', '5H', '5K'],
             mainMaterials: "", 
             materials: "",
             desc: ""

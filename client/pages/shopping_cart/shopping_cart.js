@@ -47,7 +47,7 @@ Page({
     });
 
     this.setData({
-      list: newList,
+      list: newList.filter(l => l.count > 0),
       count: this.data.count + flag,
       sum: this.data.sum + flag * price     
     });

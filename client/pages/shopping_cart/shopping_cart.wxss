@@ -101,16 +101,21 @@
 .summary {
     position: fixed;
     bottom: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
     width: 100vw;
     height: 6vh;
     text-align: right;
     font-weight: bold;
     font-size: 28rpx;
-    line-height: 2.5;
+    line-height: 1;
     letter-spacing: 5rpx;
     padding-right: 22rpx;
     box-sizing: border-box;
     border-top: 4rpx solid #efefef;
+    padding-top: 4rpx;
     background-color: #fff;
 }
 
@@ -125,4 +130,6 @@
     height: 10vh;
     background-color: #F7C0A8 ;
     color: #fff;
+    letter-spacing: 10rpx;
+    font-weight: bold;
 }

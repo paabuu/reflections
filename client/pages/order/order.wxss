@@ -3,7 +3,7 @@
 .order-container {
     width: 100vw;
     min-height: 90vh;
-    background-color: #F9B84F;
+    background-color: #EEB357;
     padding-bottom: 5vh;
     box-sizing: border-box;
     padding-top: 10vh;
@@ -29,7 +29,7 @@
     position: absolute;
     width: 60rpx;
     height: 60rpx;
-    background-color: #F9B84F;
+    background-color: #EEB357;
     border-radius: 50%;
 }
 
@@ -62,7 +62,7 @@
     height: 50rpx;
     margin: 6vh auto 0;
     padding-bottom: 30rpx;
-    border-bottom: 2px solid #747474;
+    border-bottom: 2rpx solid #747474;
 }
 
 .order-body {
@@ -107,7 +107,7 @@
 }
 
 .order-footer .date {
-    font-size: 30rpx;
+    font-size: 26rpx;
     letter-spacing: 5rpx;
     font-family: 'FZBWKSFT', Georgia, 'Times New Roman', Times, serif;
 }
@@ -135,7 +135,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    background-color: #F9B84F;
+    background-color: #EEB357;
 }
 
 .loading image {

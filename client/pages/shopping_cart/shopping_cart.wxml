@@ -1,5 +1,5 @@
 <!--pages/shopping_cart/shopping_cart.wxml-->
-<app-header bgc="orange" height="14vh">
+<app-header bgc="#EEB357" height="14vh">
     <view class="header-shopping-cart">
         <image src="/assets/p3/shopping_cart.png"></image>
     </view>

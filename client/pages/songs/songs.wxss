@@ -3,7 +3,7 @@
 .songs-container {
     width: 100vw;
     min-height: 100vh;
-    background-color: #F9B84F;
+    background-color: #EEB357;
     padding-bottom: 5vh;
     box-sizing: border-box;
     padding-top: 10vh;
@@ -29,7 +29,7 @@
     position: absolute;
     width: 60rpx;
     height: 60rpx;
-    background-color: #F9B84F;
+    background-color: #EEB357;
     border-radius: 50%;
 }
 
@@ -62,7 +62,7 @@
     height: 50rpx;
     margin: 6vh auto 0;
     padding-bottom: 30rpx;
-    border-bottom: 2px solid #747474;
+    border-bottom: 2rpx solid #747474;
 }
 
 .songs-body {
@@ -109,7 +109,7 @@
 }
 
 .songs-footer .date {
-    font-size: 30rpx;
+    font-size: 26rpx;
     letter-spacing: 5rpx;
     font-family: 'FZBWKSFT', Georgia, 'Times New Roman', Times, serif;
 }
@@ -121,10 +121,10 @@
     height: 50rpx;
 }
 
-
 .download-done {
     width: 46rpx;
     height: 46rpx;
+    z-index: 10;
 }
 
 .songs-footer .footer-bg {
@@ -149,6 +149,7 @@ canvas {
     position: fixed;
     z-index: -100;
     opacity: 0;
+    bottom: 200vh;
 }
 
 .order-bg {
