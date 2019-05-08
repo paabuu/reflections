@@ -42,7 +42,6 @@ Page({
           }
         }
       }
-      console.log(wines, o.id);
       if (wines.indexOf(o.id) > -1) {
         wineCount++;
       }
@@ -86,8 +85,6 @@ Page({
       source: 'url("https://greatwhole90.com/overcook/reflection/assets/fonts/FZBWKSFT.ttf")',
       success: console.log
     });
-
-    console.log(globalData)
   },
 
   noRepeatArray(arr) {
