@@ -4,7 +4,7 @@ let cacheBuf;
 let client; // 
 
 const server = net.createServer((socket) => {
-    console.log('cacheBuf', cacheBuf);
+    log(`cacheBuf ${cacheBuf}`);
     client = socket;
 
     if (cacheBuf) {
@@ -13,7 +13,7 @@ const server = net.createServer((socket) => {
     }
 
     socket.on('data', function(buf) {
-        console.log('data from client', buf.toString(), buf.toString('hex'));
+        log(`data from client" ${buf.toString()}  ${buf.toString('hex')}`)
         const head = Buffer.from([0xAA]);
         const tail = Buffer.from([0xBB]);
         const final = Buffer.concat([head, buf, tail]);
@@ -23,24 +23,38 @@ const server = net.createServer((socket) => {
     });
 
     socket.on('connect', function() {
-        console.log('connected')
+        log('connect');
     });
 
     socket.on('close', function() {
-        console.log('close');
+        log('close');
         cacheBuf = null;
         client = null;
     });
 
+    socket.on('timeout', function() {
+        log('timeout');
+        socket.destroy();
+        client.destroy();
+    });
+
     socket.on('error', function(err) {
-        console.log('error', err);
+        log(`error ${err}`);
     });
 });
 
 server.on('connection', function(c) {
-    console.log('connection event');
+    log('connection event');
 });
 
 server.listen(8000, () => {
-    console.log('create server on port 8000')
+    log('create server on port 8000');
 });
+
+function log(msg) {
+    console.log(`> ${ Date().slice(0, 24) }  ${msg}`);
+}
+
+setInterval(() => {
+    client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+}, 60000);
