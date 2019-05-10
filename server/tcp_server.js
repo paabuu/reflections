@@ -1,7 +1,8 @@
 const net = require('net');
 
-let cacheBuf;
-let client; // 
+let cacheBuf; // 缓存的数据，连接断开保存下来，恢复后重新发送
+let client; // 最新加入的设备
+let throttle = false; // 节流
 
 const server = net.createServer((socket) => {
     log(`cacheBuf ${cacheBuf}`);
@@ -14,12 +15,27 @@ const server = net.createServer((socket) => {
 
     socket.on('data', function(buf) {
         log(`data from client" ${buf.toString()}  ${buf.toString('hex')}`)
-        const head = Buffer.from([0xAA]);
-        const tail = Buffer.from([0xBB]);
-        const final = Buffer.concat([head, buf, tail]);
-        cacheBuf = final;
-        // socket.write(final);
-        client && client.write(final);
+        const sendSongsToClient = () => {
+            const head = Buffer.from([0xAA]);
+            const tail = Buffer.from([0xBB]);
+            const final = Buffer.concat([head, buf, tail]);
+            cacheBuf = final;
+            client && client.write(final);
+            log('已发送歌单');
+        };
+
+        if (throttle) {
+            setTimeout(() => {
+                sendSongsToClient();
+                throttle = false;
+            }, 2000);
+        } else {
+            throttle = true;
+            sendSongsToClient();
+            setTimeout(() => {
+                throttle = false;
+            }, 1000);
+        }
     });
 
     socket.on('connect', function() {
@@ -56,5 +72,16 @@ function log(msg) {
 }
 
 setInterval(() => {
-    client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+    if (throttle) {
+        setTimeout(() => {
+            client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+            throttle = false;
+        }, 2000);
+    } else {
+        client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+        throttle = true;
+        setTimeout(() => {
+            throttle = false;
+        }, 1000);
+    }
 }, 60000);
