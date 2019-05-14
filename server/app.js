@@ -25,6 +25,11 @@ app.get(/\/overcook\/(?!reflection\/.*)/, function(req, res) {
     req.pipe(request(`http://localhost:5001${req.url}`)).pipe(res);
 });
 
+// 管理后台页面
+// app.get('/overcook/reflection/admin/*', function(req, res) {
+//     req.pipe(request(`http://localhost:5002${req.url}`)).pipe(res);
+// });
+
 // 访问记录
 app.post('/overcook/reflection/record', (req, res) => {
     const { data } = req.body;
