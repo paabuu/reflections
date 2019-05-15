@@ -1,15 +1,20 @@
 const net = require('net');
-
+const uuid = require('uuid/v4');
 let cacheBuf; // 缓存的数据，连接断开保存下来，恢复后重新发送
 let client; // 最新加入的设备
 let throttle = false; // 节流
+let sockets = [];
 
 const server = net.createServer((socket) => {
     log(`cacheBuf ${cacheBuf}`);
-    client = socket;
+    // client = socket;
+    // socket.push(socket);
+    socket.id = uuid();
+    sockets.push(socket);
 
     if (cacheBuf) {
-        client && client.write(cacheBuf);
+        // client && client.write(cacheBuf);
+        push(cacheBuf);
         cacheBuf = null;
     }
 
@@ -20,7 +25,8 @@ const server = net.createServer((socket) => {
             const tail = Buffer.from([0xBB]);
             const final = Buffer.concat([head, buf, tail]);
             cacheBuf = final;
-            client && client.write(final);
+            // client && client.write(final);
+            push(final);
             log('已发送歌单');
         };
 
@@ -45,13 +51,16 @@ const server = net.createServer((socket) => {
     socket.on('close', function() {
         log('close');
         cacheBuf = null;
-        client = null;
+        // client = null;
+        sockets = sockets.filter(s => s.id !== socket.id);
+        log(`sockets length: ${sockets.length}`)
     });
 
     socket.on('timeout', function() {
         log('timeout');
+        sockets = sockets.filter(s => s.id !== socket.id);
         socket.destroy();
-        client.destroy();
+        // client.destroy();
     });
 
     socket.on('error', function(err) {
@@ -74,14 +83,27 @@ function log(msg) {
 setInterval(() => {
     if (throttle) {
         setTimeout(() => {
-            client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+            // client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+            push(Buffer.from([0x54, 0x45, 0x53, 0x54]));
             throttle = false;
         }, 2000);
     } else {
-        client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+        // client && client.write(Buffer.from([0x54, 0x45, 0x53, 0x54]));
+        push(Buffer.from([0x54, 0x45, 0x53, 0x54]));
         throttle = true;
         setTimeout(() => {
             throttle = false;
         }, 1000);
     }
 }, 60000);
+
+function push(data) {
+    log(`共${sockets.length}个socket`);
+    sockets.forEach(s => {
+        try {
+            s.write(data);
+        } catch (e) {
+            log(`${s.id}推送时出错了`)
+        }
+    });
+}
