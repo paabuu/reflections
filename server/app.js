@@ -42,8 +42,11 @@ app.post('/overcook/reflection/record', (req, res) => {
 app.post('/overcook/reflection/send_songs', function(req, res) {
     const arr = req.body.data;
     const bufArr = arr.map(str => Buffer.from(str));
-    client.write(Buffer.concat(bufArr));    
-    console.log('前端发送消息', Buffer.concat(bufArr));
+    const head = Buffer.from([0xAA]);
+    const tail = Buffer.from([0xBB]);
+
+    client.write(Buffer.concat([head, ...bufArr, tail]));    
+    console.log('前端发送消息', Buffer.concat([head, ...bufArr, tail]));
     
     res.json({
         code: 200

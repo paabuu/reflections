@@ -19,14 +19,18 @@ const server = net.createServer((socket) => {
     }
 
     socket.on('data', function(buf) {
-        log(`data from client" ${buf.toString()}  ${buf.toString('hex')}`)
+        if (buf.toString('hex').indexOf('aa') !== 0) {
+            log(`不合法数据: ${buf.toString()}`);
+            return;
+        }
+        log(`data from client" ${buf.toString()}  ${buf.toString('hex')}`);
         const sendSongsToClient = () => {
-            const head = Buffer.from([0xAA]);
-            const tail = Buffer.from([0xBB]);
-            const final = Buffer.concat([head, buf, tail]);
-            cacheBuf = final;
+            // const head = Buffer.from([0xAA]);
+            // const tail = Buffer.from([0xBB]);
+            // const final = Buffer.concat([head, buf, tail]);
+            cacheBuf = buf;
             // client && client.write(final);
-            push(final);
+            push(buf);
             log('已发送歌单');
         };
 
